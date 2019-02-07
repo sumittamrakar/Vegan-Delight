@@ -40,7 +40,7 @@
                             Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    <a id="loginButton">
                         <span class="fa fa-sign-in"></span> Login
                     </a>
                 </span>
@@ -54,7 +54,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title">Reserve a Table</h4>
-                        <button type="button" class="close" data-dismiss="modal">
+                        <button id="closeButton" type="button" class="close"> <!--data-dismiss="modal"-->
                             &times;
                         </button>
                     </div>
@@ -143,7 +143,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Login</h4>
-                    <button type="button" class="close" data-dismiss="modal">
+                    <button id="closeModal" type="button" class="close"> <!--data-dismiss="modal"-->
                         &times;
                     </button>
                 </div>
@@ -191,7 +191,7 @@
                 </div>
                 <!--Button with the link to Reserve Table form-->
                 <div class="col-12 col-sm align-self-center">
-                    <a role="button" class="btn btn-warning btn-sm btn-block" data-toggle="modal" data-target="#reserveform" data-html="true">Reserve Table</a>
+                    <a id="reserveButton" role="button" class="btn btn-warning btn-sm btn-block">Reserve Table</a> <!--data-toggle="modal" data-target="#reserveform" data-html="true"-->
                 </div>
             </div>
         </div>
@@ -362,8 +362,10 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!--Carousel Pause and Play JQuery functions-->
+    
+    <!--Javascript elements-->
     <script>
+        //Carousel Pause and Play JQuery functions
         $(document).ready(function () {
             $('#mycarousel').carousel({interval: 2000});
             $('#carouselButton').click(function() {
@@ -378,6 +380,21 @@
                     $('#carouselButton').children('span').addClass('fa-pause');
                 }
             });
+            //Show and Hide Login Modal using Javascript
+            $('#loginButton').click(function () {
+                $('#loginModal').modal('show');
+            });
+            $('#closeModal').click(function () {
+                $('#loginModal').modal('hide');
+            });     
+
+            // Show and Hide Reserve Modal using Javascript
+            $('#reserveButton').click(function () {
+                $('#reserveform').modal('show');
+            });  
+            $('#closeButton').click(function () {
+                $('#reserveform').modal('hide');
+            });  
         });
     </script>
 </body>
