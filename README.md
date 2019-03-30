@@ -1,6 +1,6 @@
-# Project: Website For Restaurant Menu
+# Project: Vegan Restaurant Website
 
-This Project is from Full Stack Web and Multiplatform Mobile App Development Specialization course from Coursera. 
-The project covers front-end frameworks: Bootstrap 4 and Angular.
+Vegan Delight is a restaurant website built with Bootstrap 4. It is fully responsive and fast.
 
+![](veganRestaurantDemo.gif)
 
